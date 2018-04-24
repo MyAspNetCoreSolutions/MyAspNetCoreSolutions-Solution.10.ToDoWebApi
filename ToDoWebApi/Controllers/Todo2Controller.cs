@@ -9,12 +9,12 @@ using ToDoWebApi.Models;
 namespace ToDoWebApi.Controllers
 {
     //[Produces("application/json")]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/Todo")]
-    public class TodoController : Controller
+    public class Todo2Controller : Controller
     {
         private readonly TodoContext context;
-        public TodoController(TodoContext ctx)
+        public Todo2Controller(TodoContext ctx)
         {
             context = ctx;
             if (context.TodoItems.Count() == 0)
