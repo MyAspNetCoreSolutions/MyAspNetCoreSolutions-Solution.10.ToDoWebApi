@@ -36,25 +36,13 @@ namespace ToDoWebApi
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0);
             });
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1.0", new Info { Title = "My API V1", Version = "v1" });
-                //c.SwaggerDoc("v2.0", new Info { Title = "My API v2", Version = "v2" });
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                //c.SwaggerEndpoint("/swagger/v2/swagger.json", "My API V2");
-            });
+            
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
