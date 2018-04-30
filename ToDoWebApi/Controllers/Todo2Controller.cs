@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ToDoWebApi.Models;
 
-namespace ToDoWebApi.Controllers
+namespace ToDoWebApi.Controllers2
 {
     //[Produces("application/json")]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/Todo")]
-    public class Todo2Controller : Controller
+    public class TodoController : Controller
     {
         private readonly TodoContext context;
-        public Todo2Controller(TodoContext ctx)
+        public TodoController(TodoContext ctx)
         {
             context = ctx;
             if (context.TodoItems.Count() == 0)
